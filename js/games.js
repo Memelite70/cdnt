@@ -1352,8 +1352,10 @@ function loadGames(list, divid) {
 
     div.onclick = () => {
       
-      const e = (g.title || "").replace(/\s+/g, "-").replace(/:/g, "");
-      const ee = e.replace('---', '-');
+      const ee = game.title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
       window.location.href = `/g/${ee}.html`;
     };
 
