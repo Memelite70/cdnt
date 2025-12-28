@@ -1352,7 +1352,7 @@ function loadGames(list, divid) {
 
     div.onclick = () => {
       
-      const e1 = game.title;
+      const e1 = g.title;
     const e2 = e1.toLowerCase();
     const e3 = e2.replace(/[^a-z0-9]+/g, "-");
     const ee = e3.replace(/^-|-$/g, "");
