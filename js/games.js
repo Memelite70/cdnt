@@ -1,10 +1,9 @@
 let games = [];
 
-fetch("/js/games.json")
+const gamesPromise = fetch("/js/games.json")
   .then(res => res.json())
   .then(data => {
     games = data;
-
   })
   .catch(err => {
     console.error("fetch err", err);
@@ -33,9 +32,9 @@ function getGameCategories(g) {
 
 function gameMatchesGenre(g, genreStr) {
   if (!genreStr) return false;
-  const want = genreStr.toLowerCase();
-  const cats = getGameCategories(g);
-  return cats.includes(want);
+  const z = genreStr.toLowerCase();
+  const x = getGameCategories(g);
+  return x.includes(z);
 }
 
 function loadGames(list, divid) {
